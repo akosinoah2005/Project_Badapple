@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Project_Badapple.vcxproj" Id="bd19fa4b-c55c-4246-8230-1c81556c1300" />
+</Solution>
