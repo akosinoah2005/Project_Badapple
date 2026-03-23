@@ -51,8 +51,9 @@ int  main() {
 	}
 	std::cout << "Done" << endl;
 
-	if (false) {
-		std::filesystem::create_directories("final");
+	//Convert the frame to ascii art(.txt) files
+	if (!std::filesystem::is_directory("final(156x40)")) {
+		std::filesystem::create_directories("final(156x40)");
 		string path = "";
 		Mat img{};
 		Mat imgGrey{};
@@ -69,10 +70,11 @@ int  main() {
 			message = "";
 			Convertframe++;
 
+			//changing image resolution and converting to GScale
 			path = "badapple/" + to_string(Convertframe) + ".png";
 			img = imread(path);
 			cvtColor(img, imgGrey, COLOR_BGR2GRAY);
-			resize(imgGrey, imgResize, Size(120, 30));//156 46 old & 120x30
+			resize(imgGrey, imgResize, Size(156, 40));//156 46 old & 120x30
 
 			COORD position = { 0,0 };
 			HANDLE output = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -81,7 +83,7 @@ int  main() {
 
 
 			std::cout << "--------------Converting Frames--------------" << endl;
-			path = "final/" + to_string(Convertframe) + ".txt";
+			path = "final(156x40)/" + to_string(Convertframe) + ".txt";
 			ofstream file(path);
 
 			for (int i = 0; i < imgResize.rows; i++) {
@@ -126,7 +128,7 @@ int  main() {
 		HANDLE output = GetStdHandle(STD_OUTPUT_HANDLE);
 		SetConsoleCursorPosition(output, position);
 
-		ifstream read("final/" + to_string(writeframe) + ".txt");
+		ifstream read("final(156x40)/" + to_string(writeframe) + ".txt");
 		stringstream buffer;
 		buffer << read.rdbuf();
 		badapple = buffer.str();
