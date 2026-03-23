@@ -21,6 +21,9 @@
   <ItemGroup>
     <ClCompile Include="Badapple.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="includes.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
