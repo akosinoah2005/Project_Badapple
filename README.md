@@ -1,2 +1,1 @@
-Good converter for badapple,,,it basically covers the terminal arounf 156x35
-
+Good converter for badapple,,,it basically covers the terminal around 156x35
