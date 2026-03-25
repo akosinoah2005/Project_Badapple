@@ -1,28 +1,20 @@
 #include "includes.h"
 
 //480x360 video dimension
-//git 
+//Ñ@#W$9876543210?!abc;:+=-,._ 
+//string Colors = " .-+*wGHM#&%@"; old
 
 static char getValue(int pVal) {
-	if (pVal < 28) { return ' '; }
-	if (pVal < 38) { return '.'; }
-	if (pVal < 57) { return '-'; }
-	if (pVal < 76) { return '+'; }
-	if (pVal < 95) { return '*'; }
-	if (pVal < 114) { return 'w'; }
-	if (pVal < 133) { return 'G'; }
-	if (pVal < 152) { return 'H'; }
-	if (pVal < 171) { return 'M'; }
-	if (pVal < 190) { return '#'; }
-	if (pVal < 209) { return '&'; }
-	if (pVal < 228) { return '%'; }
-	if (pVal < 256) { return '@'; }
+	const double denumerator = 255.0 / 20.0;
+	int density = pVal/ denumerator;	
+
+	string Colors = " _.,-=+:;cba!?0123456789$W#@";
 	
-	return ' ';
+	return Colors[density==255?density-1:density];
 }
 
 int  main() {
-
+	
 	string file_name = " ";
 	do {
 		system("cls");
@@ -68,7 +60,7 @@ int  main() {
 		
 		
 		cvtColor(img, imgGrey, COLOR_BGR2GRAY);
-		resize(imgGrey, imgResize, Size(80, 35));//156 46 old & 120x30
+		resize(imgGrey, imgResize, Size(156, 35));//156 46 old & 120x30
 	
 			for (int k = 0; k < imgResize.rows; k++) {
 				for (int j = 0; j < imgResize.cols; j++) {
@@ -102,8 +94,5 @@ int  main() {
 	
 	std::cout << ":D - Wanoh";
 	Sleep(3000);
-
 	return 0;
 }
-
-//" .-+*wGHM#&%@"
