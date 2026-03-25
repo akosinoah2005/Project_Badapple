@@ -1,7 +1,7 @@
 #include "includes.h"
 
 //480x360 video dimension
-//git
+//git 
 
 static char getValue(int pVal) {
 	if (pVal < 28) { return ' '; }
